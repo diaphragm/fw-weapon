@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>FREEDOM WARS - Weapon Discrimination</title>
+    <meta name="viewport" content="width=device-width">
 
     <!-- Loading jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -30,133 +31,135 @@
     </script>
   </head>
   <body>
-    <div id="inputs" onchange="calc()">
-      <div class="form-group">
-        <label class="control-label">Weapon</label>
-        <div class="input-group">
-          <select id="selWeapon" class="form-control">
-            <option value="EZ-Katze">EZ Katze I</option>
-            <option value="Arisaka">Arisaka Mk.1</option>
-            <option value="Barbara">Barbara's Easy Blaster</option>
-            <option value="SR-42">SR-42 / LA</option>
-            <option value="AR-7">AR-7 / L</option>
-            <option value="Pulsar">Pulsar</option>
-            <option value="AAW-M2">AAW-M2</option>
-            <option value="EZ-Nashorn">EZ Nashorn III</option>
-            <option value="EZ-Igel">EZ Igel VI</option>
-            <option value="Blaster">Blaster</option>
-            <option value="Dragonfire">Dragonfire</option>
-            <option value="Nambu">Nambu Mk.25</option>
-            <option value="MG-M7">MG-M7</option>
-            <option value="EZ-Wolf">EZ Wolf I Ausf. F</option>
-            <option value="Phalanx">Phalanx</option>
-            <option value="Creamy">Creamy Screamy Jr</option>
-            <option value="Creamy.clip">Creamy Screamy Jr (Clip Size)</option>
-            <option value="Dragonfang">Dragonfang</option>
-            <option value="Adelring">Adelring</option>
-            <option value="Murasame">Murasame Mk.9</option>
-            <option value="EZ-Falke">EZ Falke II</option>
-            <option value="Hawkshadow">Hawkshadow</option>
-            <option value="Happy">Happy Chopper</option>
-            <option value="Kris">Kris</option>
-            <option value="Damascus">Damascus knife</option>
-            <option value="TB-32">TB-32 / H</option>
-            <option value="Aftershadow">Aftershadow</option>
-            <option value="Mimas">Mimas</option>
-            <option value="Kannagi">Kannagi Mk.5</option>
-            <option value="Tebutje">Tebutje</option>
-            <option value="Caliburn">Caliburn</option>
-            <option value="L-6E1">L-6E1</option>
-            <option value="Exodus">Exodus</option>
-            <option value="Gration">Gration</option>
-            <option value="Moonshadow">Moonshadow</option>
-            <option value="Holy">Holy Lance</option>
-            <option value="Hyuga">Hyuga Mk.2</option>
+    <div class="container">
+      <div id="inputs" onchange="calc()">
+        <div class="form-group">
+          <label class="control-label">Weapon</label>
+          <div class="input-group">
+            <select id="selWeapon" class="form-control">
+              <option value="EZ-Katze">EZ Katze I</option>
+              <option value="Arisaka">Arisaka Mk.1</option>
+              <option value="Barbara">Barbara's Easy Blaster</option>
+              <option value="SR-42">SR-42 / LA</option>
+              <option value="AR-7">AR-7 / L</option>
+              <option value="Pulsar">Pulsar</option>
+              <option value="AAW-M2">AAW-M2</option>
+              <option value="EZ-Nashorn">EZ Nashorn III</option>
+              <option value="EZ-Igel">EZ Igel VI</option>
+              <option value="Blaster">Blaster</option>
+              <option value="Dragonfire">Dragonfire</option>
+              <option value="Nambu">Nambu Mk.25</option>
+              <option value="MG-M7">MG-M7</option>
+              <option value="EZ-Wolf">EZ Wolf I Ausf. F</option>
+              <option value="Phalanx">Phalanx</option>
+              <option value="Creamy">Creamy Screamy Jr</option>
+              <option value="Creamy.clip">Creamy Screamy Jr (Clip Size)</option>
+              <option value="Dragonfang">Dragonfang</option>
+              <option value="Adelring">Adelring</option>
+              <option value="Murasame">Murasame Mk.9</option>
+              <option value="EZ-Falke">EZ Falke II</option>
+              <option value="Hawkshadow">Hawkshadow</option>
+              <option value="Happy">Happy Chopper</option>
+              <option value="Kris">Kris</option>
+              <option value="Damascus">Damascus knife</option>
+              <option value="TB-32">TB-32 / H</option>
+              <option value="Aftershadow">Aftershadow</option>
+              <option value="Mimas">Mimas</option>
+              <option value="Kannagi">Kannagi Mk.5</option>
+              <option value="Tebutje">Tebutje</option>
+              <option value="Caliburn">Caliburn</option>
+              <option value="L-6E1">L-6E1</option>
+              <option value="Exodus">Exodus</option>
+              <option value="Gration">Gration</option>
+              <option value="Moonshadow">Moonshadow</option>
+              <option value="Holy">Holy Lance</option>
+              <option value="Hyuga">Hyuga Mk.2</option>
 
-          </select>
-          <span class="input-group-btn" data-toggle="buttons">
-            <label class="btn btn-default">
-              <input type="checkbox" id="advanced">Advanced
-            </label>
-          </span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div id="selLv" class="btn-group" data-toggle="buttons">
-          <label class="btn btn-default active"><input type="radio" name="selLv" value="1" checked>Lv.1</label>
-          <label class="btn btn-default"><input type="radio" name="selLv" value="2">Lv.2</label>
-          <label class="btn btn-default"><input type="radio" name="selLv" value="3">Lv.3</label>
-          <label class="btn btn-default"><input type="radio" name="selLv" value="4">Lv.4</label>
-          <label class="btn btn-default"><input type="radio" name="selLv" value="5">Lv.5</label>
-          <label class="btn btn-default"><input type="radio" name="selLv" value="6">Lv.6</label>
-          <label class="btn btn-default"><input type="radio" name="selLv" value="7">Lv.7</label>
-          <label class="btn btn-default"><input type="radio" name="selLv" value="8">Lv.8</label>
-          <label class="btn btn-default"><input type="radio" name="selLv" value="9">Lv.9</label>
-          <label class="btn btn-default"><input type="radio" name="selLv" value="10">Lv.10</label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="control-label" for="mod">Modular</label>
-        <div class="input-group" id="mod">
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="0.05">+S</label>
-            <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="0.1">+M</label>
-            <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="0.2">+L</label>
-            <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="0.3">+XL</label>
+            </select>
+            <span class="input-group-btn" data-toggle="buttons">
+              <label class="btn btn-default">
+                <input type="checkbox" id="advanced">Advanced
+              </label>
+            </span>
           </div>
-          <br>
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="-0.05">-S</label>
-            <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="-0.1">-M</label>
-            <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="-0.2">-L</label>
-            <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="-0.3">-XL</label>
-          </div>
+        </div>
 
-          <button class="btn btn-default" onclick="clearModule(); calc();">&times;</button>
+        <div class="form-group">
+          <div id="selLv" class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default active"><input type="radio" name="selLv" value="1" checked>Lv.1</label>
+            <label class="btn btn-default"><input type="radio" name="selLv" value="2">Lv.2</label>
+            <label class="btn btn-default"><input type="radio" name="selLv" value="3">Lv.3</label>
+            <label class="btn btn-default"><input type="radio" name="selLv" value="4">Lv.4</label>
+            <label class="btn btn-default"><input type="radio" name="selLv" value="5">Lv.5</label>
+            <label class="btn btn-default"><input type="radio" name="selLv" value="6">Lv.6</label>
+            <label class="btn btn-default"><input type="radio" name="selLv" value="7">Lv.7</label>
+            <label class="btn btn-default"><input type="radio" name="selLv" value="8">Lv.8</label>
+            <label class="btn btn-default"><input type="radio" name="selLv" value="9">Lv.9</label>
+            <label class="btn btn-default"><input type="radio" name="selLv" value="10">Lv.10</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="mod">Modular</label>
+          <div class="input-group" id="mod">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="0.05">+S</label>
+              <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="0.1">+M</label>
+              <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="0.2">+L</label>
+              <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="0.3">+XL</label>
+            </div>
+            <br>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="-0.05">-S</label>
+              <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="-0.1">-M</label>
+              <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="-0.2">-L</label>
+              <label class="btn btn-default" style="width: 4em;"><input type="checkbox" value="-0.3">-XL</label>
+            </div>
+
+            <button class="btn btn-default" onclick="clearModule(); calc();">&times;</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="weaponPow">Power</label>
+          <input type="number" id="weaponPow" class="form-control input-lg" oninput="validateWeaponPow();" placeholder="Enter the power in the unequipped state">
+          <span class="help-block hidden" id="errMes">Please enter a positive integer for power</span>
         </div>
       </div>
 
-      <div class="form-group">
-        <label class="control-label" for="weaponPow">Power</label>
-        <input type="number" id="weaponPow" class="form-control input-lg" oninput="validateWeaponPow();" placeholder="Enter the power in the unequipped state">
-        <span class="help-block hidden" id="errMes">Please enter a positive integer for power</span>
+      <hr>
+
+      <div class="row">
+        <div id="outp" class="table-responsive">
+          <table id="outt" class="table table-bordered table-responsive">
+          </table>
+        </div>
+
+        <div id="table-template" class="hidden">
+          <table class="table table-bordered table-responsive">
+            <thead>
+              <tr id="head"><th>Growth Type</th><th>Growth Rate (Rank:1-21)</th><th>Lv.1</th><th>Lv.2</th><th>Lv.3</th><th>Lv.4</th><th>Lv.5</th><th>Lv.6</th><th>Lv.7</th><th>Lv.8</th><th>Lv.9</th><th>Lv.10</th></tr>
+            </thead>
+            <tbody>
+              <tr id="late">     <td>Late Bloomer</td><td>{val} (Rank: {rank})</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr id="irregular"><td>Irregular</td><td>{val} (Rank: {rank})</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr id="regular">  <td>Regular</td><td>{val} (Rank: {rank})</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr id="early">    <td>Early Bloomer</td><td>{val} (Rank: {rank})</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr id="nomatch">  <td class="bg-warning" colspan="12">No Match</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+
+      <hr>
+
+      <footer class="footer">
+        <p>FREEDOM WARS Weapon Discrimination Tool <a href="./">日本語</a> / <a href="en.html">English</a></p>
+        <p>
+          Original version is <a href="https://f27092d8b4c1438887814de088f306179e2f6241.googledrive.com/host/0B87O84vHzMF7ME4zLUJfd25NcHc/WebApp/FreedomWars/weapon.html">here</a>.
+          UI redesigned by <a href="https://github.com/diaphragm/fw-weapon">@diaphragm</a>, powered by <a href="http://getbootstrap.com/">Bootstrap</a>.
+        </p>
+      </footer>
     </div>
-
-    <hr>
-
-    <div id="outp" class="table-responsive">
-      <table id="outt" class="table table-bordered table-responsive">
-      </table>
-    </div>
-
-    <div id="table-template" class="hidden">
-      <table class="table table-bordered table-responsive">
-        <thead>
-          <tr id="head"><th>Growth Type</th><th>Growth Rate (Rank:1-21)</th><th>Lv.1</th><th>Lv.2</th><th>Lv.3</th><th>Lv.4</th><th>Lv.5</th><th>Lv.6</th><th>Lv.7</th><th>Lv.8</th><th>Lv.9</th><th>Lv.10</th></tr>
-        </thead>
-        <tbody>
-          <tr id="late">     <td>Late Bloomer</td><td>{val} (Rank: {rank})</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr id="irregular"><td>Irregular</td><td>{val} (Rank: {rank})</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr id="regular">  <td>Regular</td><td>{val} (Rank: {rank})</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr id="early">    <td>Early Bloomer</td><td>{val} (Rank: {rank})</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr id="nomatch">  <td class="bg-warning" colspan="12">No Match</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <hr>
-
-    <footer class="footer">
-
-      <p><a href="./">日本語</a> / <a href="en.html">English</a></p>
-      <p>
-        Original version is <a href="https://f27092d8b4c1438887814de088f306179e2f6241.googledrive.com/host/0B87O84vHzMF7ME4zLUJfd25NcHc/WebApp/FreedomWars/weapon.html">here</a>.
-        UI redesigned by <a href="https://github.com/diaphragm/fw-weapon">@diaphragm</a>, powered by <a href="http://getbootstrap.com/">Bootstrap</a>.
-      </p>
-    </footer>
-
   </body>
 </html>
