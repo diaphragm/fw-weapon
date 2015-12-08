@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FREEDOM WARS - 武器判別</title>
+
+    <!-- Loading jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Loading bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="js/weapon_data.js"></script>
+    <script src="js/weapon.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-70136603-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+    <div id="inputs" onchange="calc()">
+      <div class="form-group">
+        <label class="control-label">武器</label>
+        <div class="input-group">
+          <select id="selWeapon" class="form-control">
+            <option value="EZ-Katze">EZ-カッツェ Ⅰ</option>
+            <option value="Arisaka">アリサカ Mk.1</option>
+            <option value="Barbara">バーバラ's・イージーギア</option>
+            <option value="SR-42">SR-42/LA</option>
+            <option value="AR-7">AR-7/L</option>
+            <option value="Pulsar">パルサー</option>
+            <option value="AAW-M2">AAW-M2</option>
+            <option value="EZ-Nashorn">EZ-ナースホルン Ⅲ</option>
+            <option value="EZ-Igel">EZ-イーゲル Ⅵ</option>
+            <option value="Blaster">ブラスター</option>
+            <option value="Dragonfire">炎龍</option>
+            <option value="Nambu">ナンブ Mk.25</option>
+            <option value="MG-M7">MG-M7</option>
+            <option value="EZ-Wolf">EZ-ヴォルフ Ⅰ ausf.F</option>
+            <option value="Phalanx">ファランクス</option>
+            <option value="Creamy">クリーミー・スクリーミーJr</option>
+            <option value="Creamy.clip">クリーミー・スクリーミーJr(装弾数)</option>
+            <option value="Dragonfang">牙龍</option>
+            <option value="Adelring">エゼルリング</option>
+            <option value="Murasame">ムラサメ Mk.9</option>
+            <option value="EZ-Falke">EZ-ファルケ Ⅱ</option>
+            <option value="Hawkshadow">隼影</option>
+            <option value="Happy">ハッピーチョッパー</option>
+            <option value="Kris">クリス</option>
+            <option value="Damascus">ダマスカスナイフ</option>
+            <option value="TB-32">TB-32/H</option>
+            <option value="Aftershadow">残影</option>
+            <option value="Mimas">ミマース</option>
+            <option value="Kannagi">カンナギ Mk.5</option>
+            <option value="Tebutje">テブテジュ</option>
+            <option value="Caliburn">カリバーン</option>
+            <option value="L-6E1">L-6E1</option>
+            <option value="Exodus">エクソダス</option>
+            <option value="Gration">グラティオン</option>
+            <option value="Moonshadow">影月</option>
+            <option value="Holy">ロンギヌス</option>
+            <option value="Hyuga">ヒュウガ Mk.2</option>
+
+  <!--
+            <option value="EZ-Katze">EZ Katze I</option>
+            <option value="Arisaka">Arisaka Mk.1</option>
+            <option value="Barbara">Barbara\'s Easy Blaster</option>
+            <option value="SR-42">SR-42 / LA</option>
+            <option value="AR-7">AR-7 / L</option>
+            <option value="Pulsar">Pulsar</option>
+            <option value="AAW-M2">AAW-M2</option>
+            <option value="EZ-Nashorn">EZ Nashorn III</option>
+            <option value="EZ-Igel">EZ Igel VI</option>
+            <option value="Blaster">Blaster</option>
+            <option value="Dragonfire">Dragonfire</option>
+            <option value="Nambu">Nambu Mk.25</option>
+            <option value="MG-M7">MG-M7</option>
+            <option value="EZ-Wolf">EZ Wolf I Ausf. F</option>
+            <option value="Phalanx">Phalanx</option>
+            <option value="Creamy">Creamy Screamy Jr</option>
+            <option value="Creamy.clip">Creamy Screamy Jr (Clip Size)</option>
+            <option value="Dragonfang">Dragonfang</option>
+            <option value="Adelring">Adelring</option>
+            <option value="Murasame">Murasame Mk.9</option>
+            <option value="EZ-Falke">EZ Falke II</option>
+            <option value="Hawkshadow">Hawkshadow</option>
+            <option value="Happy">Happy Chopper</option>
+            <option value="Kris">Kris</option>
+            <option value="Damascus">Damascus knife</option>
+            <option value="TB-32">TB-32 / H</option>
+            <option value="Aftershadow">Aftershadow</option>
+            <option value="Mimas">Mimas</option>
+            <option value="Kannagi">Kannagi Mk.5</option>
+            <option value="Tebutje">Tebutje</option>
+            <option value="Caliburn">Caliburn</option>
+            <option value="L-6E1">L-6E1</option>
+            <option value="Exodus">Exodus</option>
+            <option value="Gration">Gration</option>
+            <option value="Moonshadow">Moonshadow</option>
+            <option value="Holy">Holy Lance</option>
+            <option value="Hyuga">Hyuga Mk.2</option>
+  -->
+
+          </select>
+          <span class="input-group-btn" data-toggle="buttons">
+            <label class="btn btn-default" style="width: 7em;">
+              <input type="checkbox" id="advanced">派生
+            </label>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div id="selLv" class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default active"><input type="radio" name="selLv" value="1" checked>Lv.1</label>
+          <label class="btn btn-default"><input type="radio" name="selLv" value="2">Lv.2</label>
+          <label class="btn btn-default"><input type="radio" name="selLv" value="3">Lv.3</label>
+          <label class="btn btn-default"><input type="radio" name="selLv" value="4">Lv.4</label>
+          <label class="btn btn-default"><input type="radio" name="selLv" value="5">Lv.5</label>
+          <label class="btn btn-default"><input type="radio" name="selLv" value="6">Lv.6</label>
+          <label class="btn btn-default"><input type="radio" name="selLv" value="7">Lv.7</label>
+          <label class="btn btn-default"><input type="radio" name="selLv" value="8">Lv.8</label>
+          <label class="btn btn-default"><input type="radio" name="selLv" value="9">Lv.9</label>
+          <label class="btn btn-default"><input type="radio" name="selLv" value="10">Lv.10</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="mod">モジュラー</label>
+        <div class="input-group" id="mod">
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default"><input type="checkbox" value="0.05">＋小</label>
+            <label class="btn btn-default"><input type="checkbox" value="0.1">＋中</label>
+            <label class="btn btn-default"><input type="checkbox" value="0.2">＋大</label>
+            <label class="btn btn-default"><input type="checkbox" value="0.3">＋特</label>
+          </div>
+          <br>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default"><input type="checkbox" value="-0.05">－小</label>
+            <label class="btn btn-default"><input type="checkbox" value="-0.1">－中</label>
+            <label class="btn btn-default"><input type="checkbox" value="-0.2">－大</label>
+            <label class="btn btn-default"><input type="checkbox" value="-0.3">－特</label>
+          </div>
+
+          <button class="btn btn-default" onclick="clearModule(); calc();">&times;</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="weaponPow">威力</label>
+        <input type="number" id="weaponPow" class="form-control input-lg" oninput="validateWeaponPow();" placeholder="非装備時の値を入力してください">
+        <span class="help-block hidden" id="errMes">威力は正の整数を入力してください</span>
+      </div>
+    </div>
+
+    <hr>
+
+    <div id="outp" class="table-responsive">
+      <table id="outt" class="table table-bordered table-responsive">
+      </table>
+    </div>
+
+    <div id="table-template" class="hidden">
+      <table class="table table-bordered table-responsive">
+        <thead>
+          <tr id="head"><th>成長タイプ</th><th>タイプ内倍率 (1～21位)</th><th>Lv.1</th><th>Lv.2</th><th>Lv.3</th><th>Lv.4</th><th>Lv.5</th><th>Lv.6</th><th>Lv.7</th><th>Lv.8</th><th>Lv.9</th><th>Lv.10</th></tr>
+        </thead>
+        <tbody>
+          <tr id="late">     <td>晩成</td><td>{val}({rank}位)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr id="irregular"><td>変則</td><td>{val}({rank}位)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr id="regular">  <td>平坦</td><td>{val}({rank}位)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr id="early">    <td>早熟</td><td>{val}({rank}位)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr id="nomatch">  <td class="bg-warning" colspan="12">一致なし</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+    <footer class="footer">
+
+      <p><a href="./">日本語</a> / <a href="./en.html">English</a></p>
+      <p>
+        Original version is <a href="https://f27092d8b4c1438887814de088f306179e2f6241.googledrive.com/host/0B87O84vHzMF7ME4zLUJfd25NcHc/WebApp/FreedomWars/weapon.html">here</a>.
+        UI redesigned by <a href="https://github.com/diaphragm/fw-weapon">@diaphragm</a>, powered by <a href="http://getbootstrap.com/">Bootstrap</a>.
+      </p>
+    </footer>
+
+  </body>
+</html>
