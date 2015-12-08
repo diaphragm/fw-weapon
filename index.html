@@ -161,7 +161,7 @@
 
         <div class="form-group">
           <label class="control-label" for="weaponPow">威力</label>
-          <input type="number" id="weaponPow" class="form-control input-lg" oninput="validateWeaponPow();" placeholder="非装備時の値を入力してください">
+          <input type="number" pattern="\d*" id="weaponPow" class="form-control input-lg" oninput="validateWeaponPow();" placeholder="非装備時の値を入力してください">
           <span class="help-block hidden" id="errMes">威力は正の整数を入力してください</span>
         </div>
       </div>
