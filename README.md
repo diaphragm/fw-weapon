@@ -1,4 +1,5 @@
 # FREEDOM WARS 武器判別ツール
+https://diaphragm.github.io/fw-weapon/
 
 ## これなに
 
