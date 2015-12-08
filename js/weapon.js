@@ -54,6 +54,7 @@ function calc(round){
 
     var o = $("#outt");
     o.empty();
+    $("#modNoneMes").addClass("hidden")
 
 
 //    var text = document.createTextNode( '武器名:' + name );
@@ -127,6 +128,7 @@ function calc(round){
         noTR = false;
       }
 
+      if(mod != 1){ $("#modNoneMes").removeClass("hidden") }
     }
     if( noTR ){
       var row = $("#table-template").find("#nomatch").clone();
